@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="725.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CarrinhoController">
+    <children>
+        <ScrollPane prefHeight="725.0" prefWidth="615.0">
+            <content>
+                <VBox prefHeight="725.0" prefWidth="600.0">
+                    <children>
+                        <HBox prefHeight="60.0" prefWidth="600.0">
+                            <children>
+                                <Pane prefHeight="500.0" prefWidth="600.0">
+                                    <children>
+                                        <Label layoutX="20.0" layoutY="14.0" prefHeight="48.0" prefWidth="84.0" text="Pedido">
+                                            <font>
+                                                <Font name="System Bold" size="25.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="80.0" prefWidth="600.0">
+                            <children>
+                                <Pane fx:id="paneOp1" prefHeight="50.0" prefWidth="600.0" stylesheets="@css/style.css">
+                                    <children>
+                                        <Label layoutX="20.0" layoutY="14.0" prefHeight="27.0" prefWidth="73.0" text="Opção 1">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="20.0" layoutY="49.0" text="Descrição da opção 1" />
+                                        <Label layoutX="527.0" layoutY="27.0" text="R$ 0,00">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="446.0" layoutY="32.0" text="Quantidade" />
+                                    </children>
+                                </Pane>
+                            </children></HBox>
+                        <HBox prefHeight="10.0" prefWidth="600.0" />
+                        <HBox prefHeight="80.0" prefWidth="600.0">
+                            <children>
+                                <Pane fx:id="paneOp2" prefHeight="50.0" prefWidth="600.0" stylesheets="@css/style.css">
+                                    <children>
+                                        <Label layoutX="20.0" layoutY="14.0" prefHeight="27.0" prefWidth="73.0" text="Opção 2">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="20.0" layoutY="49.0" text="Descrição da opção 2" />
+                                        <Label layoutX="527.0" layoutY="27.0" text="R$ 0,00">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="446.0" layoutY="32.0" text="Quantidade" />
+                                    </children>
+                                </Pane>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="150.0" prefHeight="10.0" prefWidth="600.0" />
+                        <HBox layoutX="10.0" layoutY="160.0" prefHeight="80.0" prefWidth="600.0">
+                            <children>
+                                <Pane fx:id="paneOp3" prefHeight="50.0" prefWidth="600.0" stylesheets="@css/style.css">
+                                    <children>
+                                        <Label layoutX="20.0" layoutY="14.0" prefHeight="27.0" prefWidth="73.0" text="Opção 3">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="20.0" layoutY="49.0" text="Descrição da opção 3" />
+                                        <Label layoutX="527.0" layoutY="27.0" text="R$ 0,00">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="446.0" layoutY="32.0" text="Quantidade" />
+                                    </children>
+                                </Pane>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="240.0" prefHeight="10.0" prefWidth="600.0" />
+                        <HBox layoutX="10.0" layoutY="250.0" prefHeight="80.0" prefWidth="600.0">
+                            <children>
+                                <Pane fx:id="paneOp4" prefHeight="50.0" prefWidth="600.0" stylesheets="@css/style.css">
+                                    <children>
+                                        <Label layoutX="20.0" layoutY="14.0" prefHeight="27.0" prefWidth="73.0" text="Opção 4">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="20.0" layoutY="49.0" text="Descrição da opção 4" />
+                                        <Label layoutX="527.0" layoutY="27.0" text="R$ 0,00">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="446.0" layoutY="32.0" text="Quantidade" />
+                                    </children>
+                                </Pane>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="330.0" prefHeight="10.0" prefWidth="600.0" />
+                        <HBox layoutX="10.0" layoutY="340.0" prefHeight="80.0" prefWidth="600.0">
+                            <children>
+                                <Pane fx:id="paneOp5" prefHeight="50.0" prefWidth="600.0" stylesheets="@css/style.css">
+                                    <children>
+                                        <Label layoutX="20.0" layoutY="14.0" prefHeight="27.0" prefWidth="73.0" text="Opção 5">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="20.0" layoutY="49.0" text="Descrição da opção 5" />
+                                        <Label layoutX="527.0" layoutY="27.0" text="R$ 0,00">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="446.0" layoutY="32.0" text="Quantidade" />
+                                    </children>
+                                </Pane>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="420.0" prefHeight="10.0" prefWidth="600.0" />
+                        <HBox layoutX="10.0" layoutY="430.0" prefHeight="80.0" prefWidth="600.0">
+                            <children>
+                                <Pane fx:id="paneOp6" prefHeight="50.0" prefWidth="600.0" stylesheets="@css/style.css">
+                                    <children>
+                                        <Label layoutX="20.0" layoutY="14.0" prefHeight="27.0" prefWidth="73.0" text="Opção 6">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="20.0" layoutY="49.0" text="Descrição da opção 6" />
+                                        <Label layoutX="527.0" layoutY="27.0" text="R$ 0,00">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="446.0" layoutY="32.0" text="Quantidade" />
+                                    </children>
+                                </Pane>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="80.0" prefWidth="600.0">
+                            <children>
+                                <Pane prefHeight="80.0" prefWidth="600.0">
+                                    <children>
+                                        <Label layoutX="20.0" layoutY="14.0" text="Subtotal">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="527.0" layoutY="14.0" text="R$ 0,00">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="20.0" layoutY="50.0" text="Taxa de entrega">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="527.0" layoutY="50.0" text="R$ 5,00">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="50.0" prefWidth="600.0">
+                            <children>
+                                <Pane prefHeight="50.0" prefWidth="600.0">
+                                    <children>
+                                        <Label layoutX="20.0" layoutY="17.0" text="Total R$ ">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="85.0" layoutY="17.0" text="0,00">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="buttonConfirmarPedido" layoutX="458.0" layoutY="9.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="128.0" style="-fx-background-color: red;" text="Confirmar Pedido" textFill="WHITE">
+                                            <effect>
+                                                <ColorAdjust brightness="0.25" />
+                                            </effect>
+                                        </Button>
+                                        <Button fx:id="buttonEditar" layoutX="310.0" layoutY="9.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="128.0" style="-fx-background-color: gray;" text="Editar Pedido" textFill="WHITE">
+                                            <effect>
+                                                <ColorAdjust brightness="0.25" />
+                                            </effect>
+                                        </Button>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</VBox>
