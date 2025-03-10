@@ -1,6 +1,5 @@
 package Controller;
 
-import Model.ItemCardapio;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -55,8 +54,31 @@ public class TelaInicialController {
     @FXML private Button buttonMenosCalabresa;
     @FXML private Button buttonMenosFrangoCatupiry;
     @FXML private Button buttonMenosPepperoni;
-    @FXML private Button buttonAgua;
     @FXML private Button buttonCarrinho;
+    @FXML private Button buttonMaisAguaMineral;
+    @FXML private Button buttonMenosAguaMineral;
+    @FXML private Button buttonMaisAguaComGas;
+    @FXML private Button buttonMenosAguaComGas;
+    @FXML private Button buttonMaisCocaLata;
+    @FXML private Button buttonMenosCocaLata;
+    @FXML private Button buttonMaisGuaranaLata;
+    @FXML private Button buttonMenosGuaranaLata;
+    @FXML private Button buttonMaisCocaLitro;
+    @FXML private Button buttonMenosCocaLitro;
+    @FXML private Button buttonMaisGuaranaLitro;
+    @FXML private Button buttonMenosGuaranaLitro;
+    @FXML private Button buttonMaisSucoLaranja;
+    @FXML private Button buttonMenosSucoLaranja;
+    @FXML private Button buttonMaisSucoGoiaba;
+    @FXML private Button buttonMenosSucoGoiaba;
+    @FXML private Label labelAguaMineral;
+    @FXML private Label labelAguaComGas;
+    @FXML private Label labelCocaLata;
+    @FXML private Label labelGuaranaLata;
+    @FXML private Label labelCocaLitro;
+    @FXML private Label labelGuaranaLitro;
+    @FXML private Label labelSucoLaranja;
+    @FXML private Label labelSucoGoiaba;
     @FXML private Label labelSmash;
     @FXML private Label labelSalada;
     @FXML private Label labelBacon;
@@ -69,6 +91,9 @@ public class TelaInicialController {
     @FXML private Label labelPepperoni;
     @FXML private Label labelTotal;
 
+
+
+
     private GerenciadorCardapio gerenciadorCardapio;
     private ItemManager itemManager;
 
@@ -80,7 +105,6 @@ public class TelaInicialController {
         stage.setTitle("Carrinho");
         stage.setScene(new Scene(root, 615, 700));
         stage.show();
-
     }
 
     public void scrollHamb() {
@@ -136,6 +160,25 @@ public class TelaInicialController {
             itemManager.adicionarPizza("Calabresa", "Molho, Mussarela, Calabresa, Tomate, Cebola, Azeitona e Orégano.", 35.00, 40.00, 45.00, 1, labelCalabresa);
         });
 
+        buttonMaisFrangoCatupiry.setOnAction(event -> {
+            itemManager.adicionarPizza("Frango Catupiry", "Molho, Mussarela, Frango, Tomate, Catupiry e Orégano.", 35.00, 40.00, 45.00, 1, labelFrangoCatupiry);
+        });
+
+        buttonMaisPepperoni.setOnAction(event -> {
+            itemManager.adicionarPizza("Pepperoni", "Molho, Mussarela, Pepperoni e Orégano.", 35.00, 40.00, 45.00, 1, labelPepperoni);
+        });
+
+        buttonMaisAguaMineral.setOnAction(event -> {
+            itemManager.adicionarItem("Mineral", "Água Mineral", 2.00, 1, labelAguaMineral);
+        });
+
+        buttonMaisAguaComGas.setOnAction(event -> {
+            itemManager.adicionarItem("Com Gas", "Água Com Gas", 3.00, 1, labelAguaComGas);
+        });
+
+
+
+
 
         //Remover
         buttonMenosSmash.setOnAction(event -> {
@@ -164,6 +207,18 @@ public class TelaInicialController {
 
         buttonMenosPastelQueijo.setOnAction(event -> {
             itemManager.removerItem("Pastel Queijo", labelPastelQueijo);
+        });
+
+        buttonMenosCalabresa.setOnAction(event -> {
+            itemManager.removerItem("Calabresa", labelCalabresa);
+        });
+
+        buttonMenosFrangoCatupiry.setOnAction(event -> {
+            itemManager.removerItem("Frango Catupiry", labelFrangoCatupiry);
+        });
+
+        buttonMenosPepperoni.setOnAction(event -> {
+            itemManager.removerItem("Pepperoni", labelPepperoni);
         });
 
 
@@ -295,7 +350,7 @@ public class TelaInicialController {
         });
 
 
-        //Abri Carrinho
+        //Abrir Carrinho
         buttonCarrinho.setOnAction(event -> {
             try {
                 abrirCarrinho();
@@ -305,5 +360,8 @@ public class TelaInicialController {
         });
     }
 
-    public void atualizarTotal() { double total = gerenciadorCardapio.calcularTotal(); labelTotal.setText(String.format("%.2f", total)); }
+    public void atualizarTotal() {
+        double total = gerenciadorCardapio.calcularTotal();
+        labelTotal.setText(String.format("%.2f", total));
+    }
 }

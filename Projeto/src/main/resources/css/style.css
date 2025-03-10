@@ -23,7 +23,7 @@
     -fx-background-radius: 20px; /* Garante que o fundo também siga a borda arredondada */
 }
 
-#paneAgua, #paneRefriLata, #paneSuco, #paneRefriLitro {
+#paneBebidas1, #paneBebidas2 {
     -fx-border-radius: 40px; /* Define a borda arredondada */
     -fx-border-style: solid;
     -fx-border-color: gray;
