@@ -40,7 +40,6 @@ public class CarrinhoController {
         stage.setTitle("Pedido Confirmado");
         stage.setScene(new Scene(root));
         stage.setResizable(false);
-        stage.setResizable(false);
         stage.show();
     }
 
