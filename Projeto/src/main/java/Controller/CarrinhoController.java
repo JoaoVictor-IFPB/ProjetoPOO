@@ -147,12 +147,13 @@ public class CarrinhoController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/TelaInicial.fxml"));
         Parent root = loader.load();
 
+        TelaInicialController telaInicialController = loader.getController();
+        telaInicialController.setGerenciadorCardapio(gerenciadorCardapio);
+        telaInicialController.setItemManager(new ItemManager(gerenciadorCardapio, telaInicialController));
+
         Stage stage = new Stage();
         stage.setTitle("Tela Inicial");
         stage.setScene(new Scene(root, 615, 700));
-        stage.setOnCloseRequest(event -> {
-            gerenciadorCardapio.limparCardapio();
-        });
         stage.show();
     }
 
@@ -178,6 +179,7 @@ public class CarrinhoController {
                 if (currentStage != null) {
                     currentStage.close();
                 }
+                gerenciadorCardapio.limparCardapio();
                 pedidoConfirmado();
             } catch (IOException e) {
                 throw new RuntimeException(e);

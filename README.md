@@ -19,13 +19,13 @@ O sistema é dividido nas seguintes camadas principais:
 - **ItemManager**: Controla a adição, remoção e manipulação dos itens do cardápio.
 
 ### **View (FXML e CSS)**
-- Arquivos .fxml para interfaces gráficas (ex: TelaLogin.fxml, TelaInicial.fxml, TelaPedidoConfirmado.fxml).
+- Arquivos .fxml para interfaces gráficas (ex: TelaLogin.fxml, TelaInicial.fxml, TelaPedidoConfirmado.fxml e Carrinho.fxml).
 - Arquivo de estilos (style.css).
 
 ### **Relacionamento entre Classes**
 1. `TelaLoginController` abre `TelaInicialController` após a validação do login.
 2. `TelaInicialController` interage com `CarrinhoController` para adicionar e remover itens do carrinho.
-3. `TelaInicialController` pode abrir a `TelaPedidoConfirmadoController` após a confirmação do pedido.
+3. `CarrinhoController` pode abrir a `TelaPedidoConfirmadoController` após a confirmação do pedido e pode abrir a `TelaInicialController` para editar o pedido.
 4. `GerenciadorCardapio` gerencia a lista de itens disponíveis no cardápio.
 5. `ItemManager` manipula os itens do cardápio e interage com as classes visuais para atualizar a exibição dos produtos.
 
@@ -38,7 +38,6 @@ O sistema é dividido nas seguintes camadas principais:
 - JavaFX instalado
 - Maven como gerenciador de dependências
 - IDE compatível (IntelliJ IDEA, Eclipse, NetBeans, etc.)
-- MySQL para armazenamento de dados (se aplicável)
 
 ### **Passos para Executar**
 1. Clonar ou baixar o repositório do projeto.
