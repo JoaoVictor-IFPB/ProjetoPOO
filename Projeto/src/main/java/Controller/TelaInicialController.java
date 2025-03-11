@@ -96,8 +96,6 @@ public class TelaInicialController {
 
     private Stage currentStage;
 
-
-    private CarrinhoController carrinhoController;
     private GerenciadorCardapio gerenciadorCardapio;
     private ItemManager itemManager;
 
