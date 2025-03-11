@@ -1,7 +1,9 @@
 package Controller;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,6 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.EventObject;
 
 public class TelaInicialController {
 
@@ -91,19 +94,27 @@ public class TelaInicialController {
     @FXML private Label labelPepperoni;
     @FXML private Label labelTotal;
 
+    private Stage currentStage;
 
 
-
+    private CarrinhoController carrinhoController;
     private GerenciadorCardapio gerenciadorCardapio;
     private ItemManager itemManager;
 
     public void abrirCarrinho() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/Carrinho.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Carrinho.fxml"));
+        Parent root = loader.load();
 
+        CarrinhoController carrinhoController = loader.getController();
+        carrinhoController.setGerenciadorCardapio(gerenciadorCardapio);
+        carrinhoController.exibirItens();
+        
         Stage stage = new Stage();
-
         stage.setTitle("Carrinho");
         stage.setScene(new Scene(root, 615, 700));
+        stage.setOnCloseRequest(event -> {
+            gerenciadorCardapio.limparCardapio();
+        });
         stage.show();
     }
 
@@ -126,6 +137,10 @@ public class TelaInicialController {
     @FXML public void initialize() {
         gerenciadorCardapio = new GerenciadorCardapio();
         itemManager = new ItemManager(gerenciadorCardapio, this);
+        Platform.runLater(() -> {
+            currentStage = (Stage) buttonCarrinho.getScene().getWindow();
+        });
+
 
         //Adicionar
         buttonMaisSmash.setOnAction(event -> {
@@ -169,13 +184,36 @@ public class TelaInicialController {
         });
 
         buttonMaisAguaMineral.setOnAction(event -> {
-            itemManager.adicionarItem("Mineral", "Água Mineral", 2.00, 1, labelAguaMineral);
+            itemManager.adicionarItem("Água Mineral", "Água Mineral", 2.00, 1, labelAguaMineral);
         });
 
         buttonMaisAguaComGas.setOnAction(event -> {
-            itemManager.adicionarItem("Com Gas", "Água Com Gas", 3.00, 1, labelAguaComGas);
+            itemManager.adicionarItem("Água Com Gas", "Água Com Gas", 3.00, 1, labelAguaComGas);
         });
 
+        buttonMaisCocaLata.setOnAction(event ->{
+            itemManager.adicionarItem("Coca Lata","Coca Lata",5.00,1,labelCocaLata);
+        });
+
+        buttonMaisGuaranaLata.setOnAction(event ->{
+            itemManager.adicionarItem("Guarana Lata", "Guarana Lata",4.50,1,labelGuaranaLata);
+        });
+
+        buttonMaisCocaLitro.setOnAction(event ->{
+            itemManager.adicionarItem("Coca Litro","Coca Litro",10.00,1,labelCocaLitro);
+        });
+
+        buttonMaisGuaranaLitro.setOnAction(event ->{
+            itemManager.adicionarItem("Guarana Litro","Guarana Litro", 9.00,1,labelGuaranaLitro);
+        });
+
+        buttonMaisSucoLaranja.setOnAction(event -> {
+            itemManager.adicionarItem("Suco Laranja", "Suco Laranja", 5.00,1,labelSucoLaranja);
+        });
+
+        buttonMaisSucoGoiaba.setOnAction(event -> {
+            itemManager.adicionarItem("Suco Goiaba", "Suco Goiaba", 5.00,1,labelSucoGoiaba);
+        });
 
 
 
@@ -219,6 +257,38 @@ public class TelaInicialController {
 
         buttonMenosPepperoni.setOnAction(event -> {
             itemManager.removerItem("Pepperoni", labelPepperoni);
+        });
+
+        buttonMenosAguaMineral.setOnAction(event -> {
+            itemManager.removerItem("Mineral",labelAguaMineral);
+        });
+
+        buttonMenosAguaComGas.setOnAction(event -> {
+            itemManager.removerItem("Com Gas",labelAguaComGas);
+        });
+
+        buttonMenosCocaLata.setOnAction(event -> {
+            itemManager.removerItem("Coca Lata",labelCocaLata);
+        });
+
+        buttonMenosGuaranaLata.setOnAction(event -> {
+            itemManager.removerItem("Guarana Lata",labelGuaranaLata);
+        });
+
+        buttonMenosCocaLitro.setOnAction(event -> {
+            itemManager.removerItem("Coca Litro",labelCocaLitro);
+        });
+
+        buttonMenosGuaranaLitro.setOnAction(event -> {
+            itemManager.removerItem("Guarana Litro",labelGuaranaLitro);
+        });
+
+        buttonMenosSucoGoiaba.setOnAction(event -> {
+            itemManager.removerItem("Suco Goiaba",labelSucoGoiaba);
+        });
+
+        buttonMenosSucoLaranja.setOnAction(event -> {
+            itemManager.removerItem("Suco Laranja",labelSucoLaranja);
         });
 
 
@@ -349,10 +419,12 @@ public class TelaInicialController {
             scrollBebida();
         });
 
-
         //Abrir Carrinho
         buttonCarrinho.setOnAction(event -> {
             try {
+                if (currentStage != null) {
+                    currentStage.close();
+                }
                 abrirCarrinho();
             } catch (IOException e) {
                 throw new RuntimeException(e);

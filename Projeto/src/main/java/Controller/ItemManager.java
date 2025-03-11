@@ -3,7 +3,7 @@ package Controller;
 import Model.ItemCardapio;
 import javafx.scene.control.Label;
 
-public class ItemManager {
+public class ItemManager extends TelaInicialController{
     private GerenciadorCardapio gerenciadorCardapio;
     private TelaInicialController telaInicialController;
 

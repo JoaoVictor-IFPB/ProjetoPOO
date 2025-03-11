@@ -57,7 +57,11 @@ public class GerenciadorCardapio {
                 }
             }
         } catch (IOException e) {
-            // Arquivo não encontrado ou erro de leitura, use dados padrão
         }
+    }
+
+    public void limparCardapio() {
+        itens.clear();
+        salvarDados();
     }
 }
