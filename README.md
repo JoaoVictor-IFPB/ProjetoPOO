@@ -1,5 +1,3 @@
-Projeto POO
-
 # Documentação do Sistema
 
 ## 1. Estrutura do Sistema
