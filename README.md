@@ -1,1 +1,3 @@
-# ProjetoPOO-Novo
+Projeto POO
+
+Projeto feito na linguagem Java com a ferramenta "JavaFX" para finalizar a disciplina de POO na faculdade. Ao longo do percurso foram utilizados muitos conceitos e ferramentas que nos auxiliaram na montagem de todo o Sistema. O uso de conceitos fundamentais da Orientação a Objetos como Encapsulamento, Herança e uma ferramenta exclusiva pro JavaFX, um software para construção de interfaces gráficas através da montagem visual, o Scene Builder, foi um grande aliado na nossa vida. Foi um problema desafiador e que nos motivou a se aprofundar mais nos entendimentos sobre o assunto e entender na prática como é o dia a dia de um desenvolvedor. Apesar de tudo, nos trouxe muito conhecimento e experiência, apesar de termos apanhado bastante para conseguir fazer acontecer.
