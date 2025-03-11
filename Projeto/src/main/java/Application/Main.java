@@ -18,6 +18,7 @@ public class Main extends Application {
 
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root, 500, 300));
+        primaryStage.setResizable(false);
         primaryStage.setOnCloseRequest(event -> {
             gerenciadorCardapio.limparCardapio();
         });

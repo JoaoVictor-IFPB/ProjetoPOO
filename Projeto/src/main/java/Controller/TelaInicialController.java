@@ -112,6 +112,7 @@ public class TelaInicialController {
         Stage stage = new Stage();
         stage.setTitle("Carrinho");
         stage.setScene(new Scene(root, 615, 700));
+        stage.setResizable(false);
         stage.setOnCloseRequest(event -> {
             gerenciadorCardapio.limparCardapio();
         });

@@ -26,6 +26,7 @@ public class TelaLoginController {
 
         stage.setTitle("Tela Inicial");
         stage.setScene(new Scene(root, 615, 700));
+        stage.setResizable(false);
         stage.show();
     }
 
